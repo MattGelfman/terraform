@@ -4,8 +4,6 @@
 package terraform
 
 import (
-	"log"
-
 	"github.com/zclconf/go-cty/cty"
 
 	"github.com/hashicorp/terraform/internal/addrs"
@@ -78,7 +76,6 @@ func (n *NodeAbstractActionInstance) Execute(ctx EvalContext, _ walkOperation) t
 		}
 	}
 
-	log.Printf("[KRISTIN] adding action instance %s\n", n.Addr)
 	ctx.Actions().AddActionInstance(n.Addr, configVal, n.ResolvedProvider)
 	return diags
 }
